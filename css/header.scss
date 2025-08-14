@@ -9,9 +9,9 @@ header {
   position: relative;
   @include flex-center;
   justify-content: space-between;
-  padding: 10px 50px;
+  padding: 70px 100px;
   color: $white;
-  background: $dark-;
+  background: $dark-gray;
   font-family: $sans;
   box-shadow: $shadow;
   z-index: 1;
@@ -29,7 +29,7 @@ header {
       font-size: 1.5rem;
       margin: 0 10px;
       text-align: center;
-      color: #000000;
+      
     }
   }
 
