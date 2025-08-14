@@ -96,18 +96,13 @@
 }
 
 .subheader{
-  position: relative;
-  z-index: 2;
-  min-height: 420px;
-  padding: 24px 100px;
+  /* 높이를 비율로 자동 결정 */
+  aspect-ratio: 1920 / 600;   /* ← header.png 실제 비율로 수정 */
+  padding: 0 100px;           /* 세로 패딩은 0으로 (내용은 안쪽에서 여백) */
 
-  /* 그라디언트 오버레이 + 이미지 스택 */
-  background-image:
-    linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)),
-    url('{{ "/images/header.png" | relative_url }}');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* 필요 없으면 ::before 블록 삭제 */
+  /* 배경 */
+  background:
+    linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)),
+    url('/images/header.png') center / cover no-repeat;
+  display: grid; place-items: center; /* 내용 중앙 정렬(선택) */
 }
