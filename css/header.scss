@@ -42,7 +42,7 @@
 
     .logo > *{
       max-width: 100%;
-      height: 100px; /* 필요하면 더 줄이기: 100~120px 권장 */
+      height: 130px; /* 필요하면 더 줄이기: 100~120px 권장 */
     }
 
     .logo_text{
@@ -99,10 +99,10 @@
 .subheader{
   position: relative;
   z-index: 2;
-  padding: 16px 100px;
+  padding: 50px 100px;
 
   /* 배경 이미지 (경로/파일명 원하는 걸로 교체) */
-  background-image: url('{{ "/images/subheader-bg.jpg" | relative_url }}');
+  background-image: url('{{ "/images/header.png" | relative_url }}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -125,7 +125,7 @@
     max-width: 1200px; margin: 0 auto;
     @include inline-flex-center;
     gap: 12px;
-    color: $white;
+    color: $black;
 
     a{ color: $white; }
     .subheader-title{ font-weight: 600; }
