@@ -9,11 +9,15 @@
   position: relative;
   z-index: 0;
 
-  /* 예전 ::before/::after 배경 사용 안 함 */
-  &::before,
-  &::after { 
-    content: none; 
-    background: none !important;}
+  /* 상단 헤더 배경 완전 제거 */
+  header::before,
+  footer::before,
+  .header-wrap::before,
+  .header-wrap::after {
+    content: none !important;
+    background: none !important;
+}
+
 }
 
 /* 상위 헤더 */
