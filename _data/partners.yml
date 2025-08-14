@@ -1,12 +1,10 @@
-speed: 60s
-columns_desktop: 6
 logos:
-  - /assets/partners/wdas.png
-  - /assets/partners/disney.png
-  - /assets/partners/lucasfilm.png
-  - /assets/partners/abc.png
-  - /assets/partners/marvel.png
-  - /assets/partners/ilm.png
-  - /assets/partners/pixar.png
-  - /assets/partners/studiolab.png
-  - /assets/partners/fox.png
+  - { src: "/assets/images/logos/wdas.png",     alt: "Walt Disney Animation Studios" }
+  - { src: "/assets/images/logos/disney.png",   alt: "Disney" }
+  - { src: "/assets/images/logos/lucasfilm.png",alt: "Lucasfilm" }
+  - { src: "/assets/images/logos/abc.png",      alt: "ABC" }
+  - { src: "/assets/images/logos/marvel.png",   alt: "Marvel" }
+  - { src: "/assets/images/logos/ilm.png",      alt: "ILM" }
+  - { src: "/assets/images/logos/pixar.png",    alt: "Pixar" }
+  - { src: "/assets/images/logos/studiolab.png",alt: "StudioLAB" }
+  - { src: "/assets/images/logos/fox.png",      alt: "FOX" }

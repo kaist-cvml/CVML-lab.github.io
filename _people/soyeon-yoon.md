@@ -1,9 +1,6 @@
 ---
-name: Soyeon Yoon
+title: "Soyeon Yoon"
+avatar: /assets/images/people/soyeon.jpg
 role: PhD Student
-email: soyeon@kaist.ac.kr
-interests: [3D Vision, Dense Correspondence]
-photo: /assets/images/people/soyeon.jpg
-layout: single
 ---
-간단 프로필/연구 관심사/링크.
+짧은 소개문.

@@ -3,11 +3,12 @@ description: "3D Vision • Dense Correspondence • Geodesic-aware Learning"
 url: "https://kaist-cvml.github.io"
 locale: ko
 
-# GitHub Pages 호환 Jekyll 설정
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+title: "우리 연구실"
+
 plugins:
   - jekyll-include-cache
-
+  - jekyll-paginate
 # 컬렉션 선언
 collections:
   publications:
@@ -60,3 +61,22 @@ defaults:
 
 # 검색(원하면 true)
 search: true
+
+
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+collections:
+  people:
+    output: true
+  publications:
+    output: true
+
+defaults:
+  - scope: { path: "", type: "people" }
+    values: { layout: single }
+  - scope: { path: "", type: "publications" }
+    values: { layout: single }
+
+# 커스텀 자바스크립트 로드
+after_footer_scripts:
+  - /assets/js/site.js
