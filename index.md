@@ -4,22 +4,9 @@ title: ABOUT
 
 # <i class="fas fa-flask"></i>Home
 
-
-Welcome to the Computer Vision and Machine Learning (CVML) Lab at KAIST! We are a passionate group of researchers dedicated to developing robust, efficient, and trustworthy machine learning models that solve real-world challenges.
-
-### Research Interests
-
-
----
-title: ABOUT
----
-
-# <i class="fas fa-flask"></i> Home
-
 Welcome to the Computer Vision and Machine Learning (CVML) Lab at KAIST!  
 We are a team of passionate researchers developing **robust**, **efficient**, and **trustworthy** machine learning models to address real-world challenges.
 
----
 
 ## Research Interests
 
@@ -41,7 +28,3 @@ We investigate and mitigate AI flaws by creating frameworks to evaluate and prev
 ---
 
 The impact of our work is consistently recognized at the world's premier AI conferences, including **CVPR**, **NeurIPS**, **ICLR**, **ECCV**, **ACL**, and **AAAI**. We are committed to advancing the science of AI and fostering a highly collaborative and supportive research environment.
-
-
-
-

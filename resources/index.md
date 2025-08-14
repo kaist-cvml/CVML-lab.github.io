@@ -1,25 +1,30 @@
 ---
-title: PUBLICATIONS
+title: Resources
 ---
 
-# <i class="fas fa-tools"></i> Resources
+# <i class="fas fa-tools"></i>Resources
 
 <!-- section break -->
 
-## Conference
+## Software
+
+The following software is primarily developed or maintained by the COMBINE-lab or 
+by members of the COMBINE-lab in conjunction with others.
+
 {% capture html %}
-{% include resource-list.html category="conference" size="large" %}
+{% include resource-list.html type="software" size="large" %}
 {% endcapture %}
+
 {% include centerer.html html=html %}
 
-## Journal
 {% capture html %}
-{% include resource-list.html category="journal" size="medium" %}
+{% include resource-list.html type="other" size="medium" %}
 {% endcapture %}
+
 {% include centerer.html html=html %}
 
-## Domestic
 {% capture html %}
-{% include resource-list.html category="domestic" size="small" %}
+{% include resource-list.html type="legacy" size="small" %}
 {% endcapture %}
+
 {% include centerer.html html=html %}
