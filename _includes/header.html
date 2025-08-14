@@ -1,73 +1,33 @@
-<header>
-  <a
-    href="{{ '/' | relative_url }}"
-    class="logo_row"
-    data-tooltip="Home"
-    data-placement="bottom"
-    data-delay="400"
-  >
-    <span class="logo">
-      <img src="{{ 'icons/CVML_logo.png' | relative_url }}" alt="Lab Logo" />
-    </span>
-    <span class="logo_text">{{ site.title }}</span>
-  </a>
-  <nav class="nav_row">
+<div class="header-wrap" style="--background: url('{{ page.background | relative_url }}')">
+  <header class="main-header">
+    <a
+      href="{{ '/' | relative_url }}"
+      class="logo_row"
+      data-tooltip="Home"
+      data-placement="bottom"
+      data-delay="400"
+    >
+      <span class="logo">
+        <img src="{{ 'icons/CVML_logo.png' | relative_url }}" alt="Lab Logo" />
+      </span>
+      <span class="logo_text">{{ site.title }}</span>
+    </a>
 
-    {%- comment -%}
-    Add or remove header nav links here.
-    
-    Be wary of different screen sizes. Test by resizing your browser window
-    from full-width to very narrow. Adjust the $tablet and $phone cutoff points
-    in /css/variables.scss until the header elements wrap at the right time.
-    {%- endcomment -%}
+    <nav class="nav_row">
+      <a href="{{ 'research'  | relative_url }}" class="nav_link" data-tooltip="Published works" data-placement="bottom" data-delay="400">Research</a>
+      <a href="{{ 'resources' | relative_url }}" class="nav_link" data-tooltip="Tools, datasets, and more" data-placement="bottom" data-delay="400">Resources</a>
+      <a href="{{ 'team'      | relative_url }}" class="nav_link" data-tooltip="About our team" data-placement="bottom" data-delay="400">Team</a>
+      <a href="{{ 'news'      | relative_url }}" class="nav_link" data-tooltip="Recent happenings" data-placement="bottom" data-delay="400">News</a>
+      <a href="{{ 'blog'      | relative_url }}" class="nav_link" data-tooltip="Musings and miscellany" data-placement="bottom" data-delay="400">Blog</a>
+      <a href="{{ 'contact'   | relative_url }}" class="nav_link" data-tooltip="Email, address, and location" data-placement="bottom" data-delay="400">Contact</a>
+    </nav>
+  </header>
 
-    <a
-      href="{{ 'research' | relative_url }}"
-      class="nav_link"
-      data-tooltip="Published works"
-      data-placement="bottom"
-      data-delay="400"
-      >Research</a
-    >
-    <a
-      href="{{ 'resources' | relative_url }}"
-      class="nav_link"
-      data-tooltip="Tools, datasets, and more"
-      data-placement="bottom"
-      data-delay="400"
-      >Resources</a
-    >
-    <a
-      href="{{ 'team' | relative_url }}"
-      class="nav_link"
-      data-tooltip="About our team"
-      data-placement="bottom"
-      data-delay="400"
-      >Team</a
-    >
-    <a
-      href="{{ 'news' | relative_url }}"
-      class="nav_link"
-      data-tooltip="Recent happenings"
-      data-placement="bottom"
-      data-delay="400"
-      >News</a
-    >
-    <a
-      href="{{ 'blog' | relative_url }}"
-      class="nav_link"
-      data-tooltip="Musings and miscellany"
-      data-placement="bottom"
-      data-delay="400"
-      >Blog</a
-    >
-    <a
-      href="{{ 'contact' | relative_url }}"
-      class="nav_link"
-      data-tooltip="Email, address, and location"
-      data-placement="bottom"
-      data-delay="400"
-      >Contact</a
-    >
-  </nav>
-</header>
+  <!-- 아래쪽 추가 헤더(원하는 내용으로) -->
+  <div class="subheader">
+    <!-- 예: 공지/퀵링크/검색 등 -->
+    <div class="subheader-inner">
+      <span>Welcome to CVML-lab</span>
+    </div>
+  </div>
+</div>
