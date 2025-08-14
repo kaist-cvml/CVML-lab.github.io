@@ -1,0 +1,111 @@
+---
+---
+
+@import "variables";
+@import "mixins";
+@import "about-page"; /* 방금 만든 파셜 */
+
+/* ABOUT page */
+.about-page{
+    --radius: 16px;
+    --gap: 28px;
+    --muted: rgba(0,0,0,.55);
+    scroll-margin-top: 96px; /* 고정 헤더 있을 때 앵커 여백 */
+    font-family: $sans;
+  }
+  
+  /* Hero */
+  .about-hero{
+    max-width: 980px;
+    margin: 0 auto 1.75rem;
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .about-hero h1{
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: .2px;
+  }
+  .about-hero p{
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+  
+  /* 섹션 타이틀 구분선 */
+  .about-section-title{
+    max-width: 1100px;
+    margin: 24px auto 18px;
+    padding: 0 20px;
+    position: relative;
+    font-weight: 700;
+    letter-spacing: .3px;
+  }
+  .about-section-title::after{
+    content:"";
+    display:block;
+    height: 1px;
+    margin-top: 12px;
+    background: linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,.02));
+  }
+  
+  /* 3단 그리드 카드 */
+  .about-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: var(--gap);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6px 20px 24px;
+  }
+  @media (max-width: 1100px){ .about-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 720px){ .about-grid{ grid-template-columns: 1fr; } }
+  
+  .about-card{
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(0,0,0,.06), 0 1px 0 rgba(0,0,0,.06);
+    padding: 22px 22px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before{
+    content:"";
+    position:absolute; inset:0 auto auto 0;
+    width: 6px; height: 100%;
+    background: linear-gradient(180deg, #111 0%, rgba(0,0,0,.65) 100%);
+    opacity: .15;
+  }
+  .about-card h3{
+    margin: 4px 0 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .about-card h4{
+    margin: 14px 0 6px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    opacity: .9;
+  }
+  .about-card p{ color: var(--muted); line-height: 1.7; }
+  .about-card ul{ margin: 6px 0 6px 18px; line-height: 1.8; }
+  
+  /* 하단 콜아웃 */
+  .about-cta{
+    max-width: 1100px;
+    margin: 18px auto 36px;
+    padding: 18px 20px;
+    border-radius: var(--radius);
+    background:
+      radial-gradient(1200px 120px at 50% -40px, rgba(0,0,0,.06), transparent 60%),
+      #fff;
+    box-shadow: 0 8px 22px rgba(0,0,0,.06), 0 1px 0 rgba(0,0,0,.06);
+    text-align: center;
+  }
+  .about-cta p{ margin:0; line-height:1.8; color: var(--muted); }
+  
+  /* 페이지 내 링크/강조 */
+  .about-page a{ text-decoration:none; border-bottom: 1px solid rgba(0,0,0,.12); }
+  .about-page strong{ font-weight: 700; }
+  

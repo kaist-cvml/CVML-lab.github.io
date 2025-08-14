@@ -34,7 +34,7 @@
   /* 흰 배경으로 고정 */
   background: $white;
   color: $black;
-  font-family: $sans;
+  font-family: $Poppins;
   box-shadow: $shadow;
 
   .logo_row{
@@ -46,7 +46,7 @@
     }
 
     .logo_text{
-      font-family: $sans;
+      font-family: $Poppins;
       font-size: 1.5rem;
       margin: 0 10px;
       text-align: center;
@@ -77,7 +77,7 @@
 
   a{
     color: $black !important; /* 흰 배경에 맞춰 검정 */
-    font-family: $sans;
+    font-family: $Poppins;
     text-decoration: none;
   }
 
@@ -102,7 +102,7 @@
 
   /* 배경 */
   background:
-    linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1)),
+    linear-gradient(rgba(255,255,255,10), rgba(255,255,255,10)),
     url('/images/header.png') center / cover no-repeat;
   display: grid; place-items: center; /* 내용 중앙 정렬(선택) */
 }
