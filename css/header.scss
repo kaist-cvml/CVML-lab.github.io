@@ -11,7 +11,7 @@ header {
   justify-content: space-between;
   padding: 70px 100px;
   color: $white;
-  background: $dark-gray;
+  background: $white;
   font-family: $sans;
   box-shadow: $shadow;
   z-index: 1;
@@ -29,6 +29,7 @@ header {
       font-size: 1.5rem;
       margin: 0 10px;
       text-align: center;
+      color: $black;
       
     }
   }
