@@ -1,0 +1,28 @@
+collections:
+  posts: { output: true }
+  publications: { output: true, permalink: /publications/:title/ }
+  people: { output: true, permalink: /people/:name/ }
+  areas: { output: true, permalink: /areas/:name/ }
+
+defaults:
+  - scope: { path: "", type: publications }
+    values: { layout: single, author_profile: false, toc: false }
+  - scope: { path: "", type: people }
+    values: { layout: single }
+  - scope: { path: "", type: areas }
+    values: { layout: single }
+
+# 카테고리/태그(분야) 필터용
+category_archive:
+  type: liquid
+  path: /category/
+tag_archive:
+  type: liquid
+  path: /tag/
+
+nav:
+  - title: "Home"         ; url: "/"
+  - title: "Research Areas"; url: "/areas/"
+  - title: "Publications" ; url: "/publications/"
+  - title: "People"       ; url: "/people/"
+  - title: "Join Us"      ; url: "/join/"
