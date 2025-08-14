@@ -4,46 +4,30 @@
 @import "variables";
 @import "mixins";
 
-/* 공통 배경 레이어 */
+/* 공통 래퍼: 전체 배경 레이어 제거(이미지 사용 안 함) */
 .header-wrap{
   position: relative;
   z-index: 0;
 
-  &::before{
-    content: "";
-    position: absolute;
-    inset: 0;                          /* wrap 전체(메인+서브) 덮기 */
-    background-image: var(--background);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    z-index: 0;
-    pointer-events: none;
-    /* 필요하면 밝기 톤을 별도 오버레이로 */
-    /* opacity 주지 말고 아래 ::after를 사용 권장 */
-  }
-
-  /* 선택: 연하게 보이게 하는 오버레이 (선명도 저하 없이 톤만 조절) */
-  &::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,.8);  /* 진하기 조절 */
-    z-index: 1;
-    pointer-events: none;
-  }
+  /* 예전 ::before/::after 배경 사용 안 함 */
+  &::before,
+  &::after { content: none; }
 }
 
-/* 기존 header → main-header 로 변경 */
+/* 상위 헤더 */
 .main-header{
   box-sizing: border-box;
   position: relative;
-  z-index: 2;                /* 배경(::before/::after) 위로 */
+  z-index: 2;
   @include flex-center;
   justify-content: space-between;
-  padding: 50px 50px;
-  color: $white;
-  background: transparent;   /* 중요: 투명 */
+
+  /* 세로 줄임 */
+  padding: 10px 100px;
+
+  /* 흰 배경으로 고정 */
+  background: $white;
+  color: $black;
   font-family: $sans;
   box-shadow: $shadow;
 
@@ -52,7 +36,7 @@
 
     .logo > *{
       max-width: 100%;
-      height: 150px;
+      height: 150px; /* 필요하면 더 줄이기: 100~120px 권장 */
     }
 
     .logo_text{
@@ -78,6 +62,7 @@
       text-align: center;
       white-space: nowrap;
       transition: opacity $fast;
+      color: $black; /* 흰 배경에서 보이도록 */
     }
 
     &:hover .nav_link{ opacity: .25; }
@@ -85,7 +70,7 @@
   }
 
   a{
-    color: $white !important;
+    color: $black !important; /* 흰 배경에 맞춰 검정 */
     font-family: $sans;
     text-decoration: none;
   }
@@ -104,17 +89,39 @@
   }
 }
 
-/* 아래 헤더 */
+/* 아래 헤더: 이 영역에만 배경 이미지 적용 */
 .subheader{
   position: relative;
-  z-index: 2;                 /* 배경 위로 */
-  background: transparent;    /* 중요: 투명 */
+  z-index: 2;
   padding: 16px 100px;
+
+  /* 배경 이미지 (경로/파일명 원하는 걸로 교체) */
+  background-image: url('{{ "/images/subheader-bg.jpg" | relative_url }}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* 위쪽 경계선 느낌 유지(선택) */
   box-shadow: 0 -1px 0 rgba(0,0,0,.06) inset;
 
+  /* 텍스트 가독성 위해 어두운 오버레이(선택) */
+  &::before{
+    content:"";
+    position:absolute; inset:0;
+    background: rgba(0,0,0,.25); /* 필요 시 진하기 조절 */
+    z-index: 0;
+    pointer-events:none;
+  }
+
   .subheader-inner{
+    position: relative;
+    z-index: 1; /* 오버레이 위로 */
     max-width: 1200px; margin: 0 auto;
     @include inline-flex-center;
     gap: 12px;
+    color: $white;
+
+    a{ color: $white; }
+    .subheader-title{ font-weight: 600; }
   }
 }
