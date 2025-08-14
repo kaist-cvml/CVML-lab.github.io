@@ -1,28 +1,43 @@
 ---
-title: Research
+title: ABOUT
 ---
 
-# <i class="fas fa-microscope"></i>Research
+# <i class="fas fa-flask"></i>Home
 
-<!-- section break -->
 
-## Card Search
+Welcome to the Computer Vision and Machine Learning (CVML) Lab at KAIST! We are a passionate group of researchers dedicated to developing robust, efficient, and trustworthy machine learning models that solve real-world challenges.
 
-A _card search_ component, a search box to find all _card_ components on the page that contain certain words/names.
+### Research Interests
 
-You can type in "terms" (single words) or "phrases" (quoted multiple words), like `term1 term2 "full phrase 1" "full phrase 2"`.
-Cards that contain all of the terms and at least one of the phrases will be considered a match.
-Search words will be highlighted in the results (if they're longer than 2 characters).
-Searching is case insensitive.
 
-{% include card-search.html subject="papers" %}
+---
+title: ABOUT
+---
 
-<!-- section break -->
+# <i class="fas fa-flask"></i> Home
 
-## Research List
+Welcome to the Computer Vision and Machine Learning (CVML) Lab at KAIST!  
+We are a team of passionate researchers developing **robust**, **efficient**, and **trustworthy** machine learning models to address real-world challenges.
 
-A _research list_ component, to sort and group all of your research publications.
-Can be used on any page, but assumes its content from `/_data/research-output.yml`.
-Uses the _card_ component (small).
+---
 
-{% include research-list.html %}
+## Research Interests
+
+### Generative AI
+We develop high-fidelity text-to-image, video, and 3D generation methods, focusing on **diffusion models** and **user-guided control**.
+
+### Computer Vision under Real-World Constraints
+We design robust vision algorithms for challenging environments or limited data scenarios, with applications in:
+- **Autonomous driving** (e.g., LiDAR semantic segmentation)  
+- **Open-vocabulary segmentation**  
+- **Weakly/unsupervised learning**  
+- **Efficient training** (e.g., dataset distillation)
+
+### Trustworthy AI
+We investigate and mitigate AI flaws by creating frameworks to evaluate and prevent:
+- Hallucinations in generative models  
+- Bias in AI systems
+
+---
+
+The impact of our work is consistently recognized at the world's premier AI conferences, including **CVPR**, **NeurIPS**, **ICLR**, **ECCV**, **ACL**, and **AAAI**. We are committed to advancing the science of AI and fostering a highly collaborative and supportive research environment.
