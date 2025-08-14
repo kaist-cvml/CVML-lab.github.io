@@ -41,7 +41,7 @@
   z-index: 2;                /* 배경(::before/::after) 위로 */
   @include flex-center;
   justify-content: space-between;
-  padding: 50px 100px;
+  padding: 50px 50px;
   color: $white;
   background: transparent;   /* 중요: 투명 */
   font-family: $sans;
