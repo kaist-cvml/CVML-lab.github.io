@@ -54,10 +54,8 @@ https://fontawesome.com/icons?d=gallery&q=icon&m=free
   href="{{ include.link }}"
   class="paper_link"
 >
-  {%- if include.type == "manubot" -%}
-  {%- include manubot-logo.svg -%}
-  {%- else -%}
-  <i class="{{ icon }}"></i>
-  {%- endif -%}
+  <img src="{{ 'icons/CVML_logo.png' | relative_url }}" 
+       alt="CVML Logo" 
+       style="height: 20px; vertical-align: middle; margin-right: 5px;" />
   {{- text -}}
 </a>
