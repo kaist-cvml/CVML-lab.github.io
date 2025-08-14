@@ -95,39 +95,18 @@
   }
 }
 
-/* 아래 헤더: 이 영역에만 배경 이미지 적용 */
 .subheader{
   position: relative;
   z-index: 2;
   padding: 50px 100px;
 
-  /* 배경 이미지 (경로/파일명 원하는 걸로 교체) */
-  background-image: url('{{ "/images/header.png" | relative_url }}');
+  /* 그라디언트 오버레이 + 이미지 스택 */
+  background-image:
+    linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)),
+    url('{{ "/images/header.png" | relative_url }}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  /* 위쪽 경계선 느낌 유지(선택) */
-  box-shadow: 0 -1px 0 rgba(0,0,0,.06) inset;
-
-  /* 텍스트 가독성 위해 어두운 오버레이(선택) */
-  &::before{
-    content:"";
-    position:absolute; inset:0;
-    background: rgba(255, 255, 255, 0); /* 필요 시 진하기 조절 */
-    z-index: 0;
-    pointer-events:none;
-  }
-
-  .subheader-inner{
-    position: relative;
-    z-index: 1; /* 오버레이 위로 */
-    max-width: 1200px; margin: 0 auto;
-    @include inline-flex-center;
-    gap: 12px;
-    color: $black;
-
-    a{ color: $white; }
-    .subheader-title{ font-weight: 600; }
-  }
+  /* 필요 없으면 ::before 블록 삭제 */
 }
