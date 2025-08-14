@@ -114,7 +114,7 @@
   &::before{
     content:"";
     position:absolute; inset:0;
-    background: rgba(255, 255, 255, 1); /* 필요 시 진하기 조절 */
+    background: rgba(255, 255, 255, 0); /* 필요 시 진하기 조절 */
     z-index: 0;
     pointer-events:none;
   }
