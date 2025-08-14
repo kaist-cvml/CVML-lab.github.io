@@ -1,4 +1,93 @@
-.pub-grid, .people-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
-.card, .person { border:1px solid #eee; border-radius:16px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,.04); }
-.card img, .person img { width:100%; border-radius:12px; display:block; }
-.tags span { margin-right:6px; font-size:.85rem; opacity:.8; }
+:root{
+    --brand:#0a84ff;        /* 액센트 */
+    --ink: #0b0f19;         /* 본문 */
+    --muted:#5b6372;        /* 서브텍스트 */
+    --card:#0f1422;         /* 카드 배경(다크) */
+    --bg:#080c15;           /* 전체 배경(다크) */
+    --radius:16px;
+    --gap:20px;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:#e8ebf4;
+    font-family: "Pretendard", Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  
+  /* 헤더: 투명→스크롤 시 솔리드 */
+  .site-header{ 
+    background:transparent !important; 
+    border:none !important; 
+    position:sticky; top:0; z-index:999; 
+    backdrop-filter:saturate(150%) blur(10px);
+    transition: background .3s ease;
+  }
+  .site-header.scrolled{ background:rgba(8,12,21,.85) !important; }
+  .greedy-nav a{ color:#e8ebf4 !important; }
+  .greedy-nav a:hover{ color:var(--brand) !important; }
+  
+  /* 히어로 */
+  .hero{
+    padding:100px 0 56px;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(10,132,255,.25), transparent 60%),
+      radial-gradient(800px 400px at 10% -20%, rgba(86,92,255,.18), transparent 60%),
+      linear-gradient(to bottom, rgba(10,10,20,.35), rgba(8,12,21,1));
+    border-radius: 0 0 40px 40px;
+  }
+  .hero .title{
+    font-weight:800; font-size: clamp(28px, 5vw, 54px); letter-spacing:-.02em;
+  }
+  .hero .subtitle{ color:var(--muted); margin-top:10px; }
+  
+  /* 섹션 타이틀 */
+  .section-title{
+    margin:44px 0 16px;
+    font-weight:800; letter-spacing:.02em;
+  }
+  
+  /* 카드 그리드 (퍼블리케이션/에어리어/피플 공통) */
+  .grid{ 
+    display:grid; 
+    grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); 
+    gap:var(--gap); 
+  }
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+    border:1px solid rgba(255,255,255,.07);
+    border-radius: var(--radius);
+    overflow:hidden; position:relative;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    border-color: rgba(10,132,255,.35);
+  }
+  .card img{ width:100%; display:block; aspect-ratio: 16/9; object-fit:cover; }
+  .card .pad{ padding:16px; }
+  .card .kicker{ color:#a7b0c0; font-size:.85rem; }
+  .card h3{ margin:6px 0 6px; font-size:1.05rem; line-height:1.3; }
+  .card .meta{ color:#91a0b8; font-size:.85rem; }
+  .tag{ display:inline-block; padding:2px 8px; margin-right:6px; border-radius:999px; background:rgba(10,132,255,.15); color:#cfe2ff; font-size:.75rem; }
+  
+  /* People */
+  .person .avatar{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+  
+  /* 푸터 CTA */
+  .cta{
+    margin:64px 0; padding:28px; border-radius:24px;
+    background: radial-gradient(600px 280px at 80% 20%, rgba(10,132,255,.18), transparent 60%),
+               linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.08);
+  }
+  
+  /* 작은 헬퍼 */
+  .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.9em; }
+  .mute{ color:var(--muted); }
+  .btn{
+    display:inline-block; padding:10px 16px; border-radius:10px;
+    background:linear-gradient(180deg, #1a83ff, #1469cc); color:white; text-decoration:none;
+    border:1px solid rgba(255,255,255,.1);
+  }
+  .btn:hover{ filter: brightness(1.07); }

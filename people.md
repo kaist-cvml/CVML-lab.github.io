@@ -1,16 +1,19 @@
 ---
 layout: single
 title: People
+permalink: /people/
 ---
 
-<div class="people-grid">
-  {% assign members = site.people | sort: "name" %}
-  {% for m in members %}
-  <div class="person">
-    <img src="{{ m.photo | default:'/assets/images/people/placeholder.jpg' }}" alt="{{ m.name }}">
-    <h3><a href="{{ m.url }}">{{ m.name }}</a></h3>
-    <p>{{ m.role }}</p>
-    <p>{{ m.interests | join: ', ' }}</p>
-  </div>
-  {% endfor %}
+<div class="grid">
+{% assign members = site.people | sort: "name" %}
+{% for m in members %}
+  <a class="card person" href="{{ m.url }}">
+    <img class="avatar" src="{{ m.photo | default:'/assets/images/people/placeholder.jpg' }}" alt="{{ m.name }}">
+    <div class="pad">
+      <div class="kicker">{{ m.role }}</div>
+      <h3>{{ m.name }}</h3>
+      {% if m.interests %}<div class="meta">{{ m.interests | join: ', ' }}</div>{% endif %}
+    </div>
+  </a>
+{% endfor %}
 </div>
