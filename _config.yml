@@ -1,7 +1,7 @@
 # https://jekyllrb.com/docs/configuration/
 
 # site-wide variables
-title: CVML-lab # title of site, used in tab name and elsewhere
+title:  # title of site, used in tab name and elsewhere
 email: rob@cs.umd.edu # default email
 google: Rob Patro # default name to search on Google Scholar
 github: CVML-lab  # default GitHub user/org, without the @

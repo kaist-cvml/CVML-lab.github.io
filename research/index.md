@@ -12,23 +12,20 @@ We are a team of passionate researchers developing **robust**, **efficient**, an
 ## Research Interests
 
 ### Generative AI
-We explore advanced **text-to-image**, **video**, and **3D generation** techniques with a strong focus on diffusion models, controllable generation, and efficiency.
+We study **text-to-image**, **video**, and **3D generation** with a focus on diffusion models, controllable generation, and efficiency.
 
-#### 1. Controllable & Training-free Text-to-Image Generation
-- Developing methods to generate images from text or sketches without retraining the model  
-- Enabling fine-grained user control over the generation process
+#### 1. Controllable & Training-free Generation
+- Generating images from text or sketches without retraining  
+- Providing fine-grained control over content and style
 
-#### 2. Efficient & Memory-Aware Diffusion Models
-- Reducing computation and memory usage in diffusion-based generative models  
-- Designing quantization and model compression strategies for high-speed generation
+#### 2. Efficient Diffusion Models
+- Reducing computation and memory requirements  
+- Applying quantization and compression for faster generation
 
-#### 3. 3D Generation and Editing
-- Creating 3D content directly from text or images  
-- Providing editing controls for shape, texture, and style while preserving object identity
+#### 3. 3D Generation & Editing
+- Creating and editing 3D content from text or images  
+- Preserving object identity while enabling shape and texture changes
 
-#### 4. Hallucination Mitigation in Generative Models
-- Detecting and preventing hallucinated or factually incorrect outputs in generated images  
-- Leveraging external knowledge or retrieval-based grounding to improve realism and reliability
 
 ---
 
