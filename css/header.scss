@@ -102,7 +102,7 @@
 
   /* 배경 */
   background:
-    linear-gradient(rgba(255,255,255,10), rgba(255,255,255,10)),
+    linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1)),
     url('/images/header.png') center / cover no-repeat;
   display: grid; place-items: center; /* 내용 중앙 정렬(선택) */
 }
