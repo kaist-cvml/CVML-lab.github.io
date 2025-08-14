@@ -1,12 +1,12 @@
 ---
-title: Resources
+title: PUBLICATIONS
 ---
 
 # <i class="fas fa-tools"></i>Resources
 
 <!-- section break -->
 
-## Software
+## Conference
 
 The following software is primarily developed or maintained by the COMBINE-lab or 
 by members of the COMBINE-lab in conjunction with others.
