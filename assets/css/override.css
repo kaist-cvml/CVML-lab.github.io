@@ -91,3 +91,31 @@
     border:1px solid rgba(255,255,255,.1);
   }
   .btn:hover{ filter: brightness(1.07); }
+
+
+  .mm-hero{position:relative; overflow:hidden; border-radius:0 0 40px 40px}
+.mm-hero .hero-track{position:relative; height: clamp(420px, 60vw, 700px)}
+.hero-slide{position:absolute; inset:0; opacity:0; transition:opacity .6s ease}
+.hero-slide::before{
+  content:""; position:absolute; inset:0;
+  background-image: var(--bg);
+  background-size:cover; background-position:center;
+  filter:saturate(105%); transform:scale(1.02);
+}
+.hero-slide::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.25), rgba(0,0,0,.0));
+}
+.hero-slide.is-active{opacity:1}
+.hero-inner{position:absolute; left: clamp(16px, 8vw, 100px); bottom: clamp(24px, 10vw, 120px); color:#fff; max-width:min(90%, 780px)}
+.hero-title{font-weight:800; font-size: clamp(28px, 6vw, 64px); line-height:1.05; text-shadow:0 2px 18px rgba(0,0,0,.4)}
+.hero-sub{font-size: clamp(14px, 2.2vw, 20px); margin:.8rem 0 1rem; opacity:.95}
+.hero-nav{position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.0); border:0; font-size:42px; color:#fff; padding:.4rem .6rem; cursor:pointer}
+.hero-nav:hover{opacity:.85}
+.hero-nav.prev{left:10px} .hero-nav.next{right:10px}
+.partners{overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.02); padding:12px}
+.partners .track{display:flex; gap:32px; width:max-content; animation: marquee var(--speed, 60s) linear infinite}
+.partners .item{flex:0 0 auto; width: clamp(120px, 12vw, 220px); display:flex; align-items:center; justify-content:center}
+.partners img{max-width:100%; height:auto; filter:grayscale(100%) opacity(.9)}
+.partners img:hover{filter:none}
+@keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}

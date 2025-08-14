@@ -1,0 +1,20 @@
+<div class="hero mm-hero">
+    <div class="hero-track" data-autoplay="true" data-interval="6000">
+      {% for s in site.data.hero.slides %}
+      <section class="hero-slide{% if forloop.first %} is-active{% endif %}" style="--bg:url('{{ s.image }}')">
+        <div class="hero-inner">
+          <h1 class="hero-title">{{ s.title_html | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
+          {% if s.text_html %}
+            <p class="hero-sub">{{ s.text_html }}</p>
+          {% endif %}
+          {% if s.cta_url %}
+            <a class="btn" href="{{ s.cta_url }}"> {{ s.cta_text | default: "Learn More" }} </a>
+          {% endif %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    <button class="hero-nav prev" aria-label="Previous">‹</button>
+    <button class="hero-nav next" aria-label="Next">›</button>
+  </div>
+  

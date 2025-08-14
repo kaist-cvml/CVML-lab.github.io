@@ -1,0 +1,12 @@
+speed: 60s
+columns_desktop: 6
+logos:
+  - /assets/partners/wdas.png
+  - /assets/partners/disney.png
+  - /assets/partners/lucasfilm.png
+  - /assets/partners/abc.png
+  - /assets/partners/marvel.png
+  - /assets/partners/ilm.png
+  - /assets/partners/pixar.png
+  - /assets/partners/studiolab.png
+  - /assets/partners/fox.png

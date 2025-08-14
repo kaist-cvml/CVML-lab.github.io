@@ -1,0 +1,11 @@
+slides:
+  - image: /assets/hero/pixar.jpg
+    title_html: "From Oscar®<br> to Emmy®"
+    text_html: "Congrats to all the recipients across Disney..."
+    cta_text: "Learn More"
+    cta_url: "https://studios.disneyresearch.com/fromoscartoemmy/"
+  - image: /assets/hero/medusa.jpg
+    title_html: "Medusa <br>Performance<br> Capture System"
+    text_html: "Innovations from DisneyResearch|Studios Receive Academy's Sci‑Tech Award."
+    cta_text: "Learn More"
+    cta_url: "https://www.thewaltdisneycompany.com/innovations-from-disneyresearchstudios-receive-academys-sci-tech-award/"
