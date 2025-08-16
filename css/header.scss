@@ -95,14 +95,24 @@
   }
 }
 
-.subheader{
-  /* 높이를 비율로 자동 결정 */
-  aspect-ratio: 1920 / 600;   /* ← header.png 실제 비율로 수정 */
-  padding: 0 100px;           /* 세로 패딩은 0으로 (내용은 안쪽에서 여백) */
+/* ① 예전 배경/오버레이 전면 비활성화: "최상위"에서 선언해야 먹습니다 */
+header::before,
+footer::before,
+.header-wrap::before,
+.header-wrap::after {
+  content: none !important;
+  background: none !important;
+}
 
-  /* 배경 */
+/* ② subheader를 오버레이 위로 올리기 + 배경 재확인 */
+.subheader{
+  position: relative;      /* stacking context 생성 */
+  z-index: 2;              /* ::after(보통 z=1)보다 위 */
+  aspect-ratio: 1920 / 600;
+  padding: 0 100px;
+
   background:
     linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)),
-    url('/images/header.png') center / cover no-repeat;
-  display: grid; place-items: center; /* 내용 중앙 정렬(선택) */
+    url('/images/header.png') center / cover no-repeat !important;
+  display: grid; place-items: center;
 }
