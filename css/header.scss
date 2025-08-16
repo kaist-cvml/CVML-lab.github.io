@@ -5,7 +5,7 @@
 @import "mixins";
 
 /* =========================================================
-   0) 레거시 배경/오버레이 전면 비활성화 (전역에서 선언 필수)
+   0) 레거시 배경/오버레이 전면 비활성화 (전역 선언)
    ========================================================= */
 header::before,
 footer::before,
@@ -26,7 +26,7 @@ footer::before,
 /* =========================================================
    2) 상위 헤더 (메인 네비)
    ========================================================= */
-.main-header{
+.main-header {
   box-sizing: border-box;
   position: relative;
   z-index: 2;
@@ -42,15 +42,15 @@ footer::before,
   font-family: $sans;
   box-shadow: $shadow;
 
-  .logo_row{
+  .logo_row {
     @include inline-flex-center;
 
-    .logo > *{
+    .logo > * {
       max-width: 100%;
-      height: 130px; /* 필요 시 100~120px로 더 축소 가능 */
+      height: 130px; /* 필요 시 100~120px로 축소 가능 */
     }
 
-    .logo_text{
+    .logo_text {
       font-family: $sans;
       font-size: 1.5rem;
       margin: 0 10px;
@@ -59,7 +59,7 @@ footer::before,
     }
   }
 
-  .nav_row{
+  .nav_row {
     @include inline-flex-center;
     flex-wrap: wrap;
     font-size: 0.9rem;
@@ -67,7 +67,7 @@ footer::before,
     text-transform: uppercase;
     letter-spacing: 1px;
 
-    .nav_link{
+    .nav_link {
       display: inline-block;
       padding: 10px;
       text-align: center;
@@ -76,26 +76,26 @@ footer::before,
       color: $black; /* 흰 배경 대비 */
     }
 
-    &:hover .nav_link{ opacity: .25; }
-    & .nav_link:hover{ opacity: 1; }
+    &:hover .nav_link { opacity: .25; }
+    & .nav_link:hover { opacity: 1; }
   }
 
-  a{
+  a {
     color: $black !important;
     font-family: $sans;
     text-decoration: none;
   }
 
-  @media (max-width: $tablet){
+  @media (max-width: $tablet) {
     flex-direction: column;
-    .logo_row{ margin-bottom: 10px; }
+    .logo_row { margin-bottom: 10px; }
   }
 
-  @media (max-width: $phone){
-    .logo_row{ margin-bottom: 20px; flex-direction: column; }
-    .nav_row{
+  @media (max-width: $phone) {
+    .logo_row { margin-bottom: 20px; flex-direction: column; }
+    .nav_row {
       flex-direction: column; width: 100%;
-      .nav_link{ width: 100%; }
+      .nav_link { width: 100%; }
     }
   }
 }
@@ -103,42 +103,44 @@ footer::before,
 /* =========================================================
    3) 하위 헤더 (서브 헤더에만 배경 이미지)
    ========================================================= */
-.subheader{
-  position: relative;          /* 스태킹 컨텍스트 */
+.subheader {
+  position: relative;   /* 스태킹 컨텍스트 */
   z-index: 2;
-  aspect-ratio: 1920 / 600;    /* header.png 실제 비율로 조정 */
-  padding: 0 100px;            /* 세로 패딩은 0 (내부에서 여백 주기) */
-  display: grid; 
-  place-items: center;
 
-  /* 배경: 그라디언트 오버레이 + 이미지 (한 줄로 고정) */
+  /* 높이 확정 (aspect-ratio 대신 확실하게) */
+  width: 100%;
+  min-height: 420px;    /* 필요 시 40vh 등으로 */
+  padding: 0;           /* 세로 여백은 inner에서 처리 */
+
+  /* 배경: 그라디언트 오버레이 + 이미지 (shorthand 한 줄) */
   background:
     linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)),
     url('/images/header.png') center / cover no-repeat !important;
+
+  display: grid;
+  place-items: center;  /* 내용 중앙 정렬(선택) */
 }
 
-/* 혹시 남아있을 오버레이를 확실히 제거 */
+/* 혹시 남아있을 가리는 오버레이 확실히 제거 */
 .subheader::before { content: none !important; background: none !important; }
 
-/* 컨텐츠 래퍼(선택) */
-.subheader-inner{
+/* 컨텐츠 래퍼 */
+.subheader-inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 24px 0;            /* 실제 내용 세로 여백은 여기서 */
+  padding: 24px 100px;  /* 실제 내용 세로 여백은 여기서 */
   color: $black;
   @include inline-flex-center;
   gap: 12px;
 
-  a{ color: $black; }
+  a { color: $black; }
 }
 
-/* 반응형 패딩(선택) */
-@media (max-width: $tablet){
-  .subheader{ padding: 0 48px; }
-  .subheader-inner{ padding: 20px 0; }
+/* 반응형 패딩 */
+@media (max-width: $tablet) {
+  .subheader-inner { padding: 20px 48px; }
 }
-@media (max-width: $phone){
-  .subheader{ padding: 0 24px; }
-  .subheader-inner{ padding: 16px 0; }
+@media (max-width: $phone) {
+  .subheader-inner { padding: 16px 24px; }
 }
