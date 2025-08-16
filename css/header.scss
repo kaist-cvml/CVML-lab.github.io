@@ -4,23 +4,28 @@
 @import "variables";
 @import "mixins";
 
-/* 공통 래퍼: 전체 배경 레이어 제거(이미지 사용 안 함) */
-.header-wrap{
+/* =========================================================
+   0) 레거시 배경/오버레이 전면 비활성화 (전역에서 선언 필수)
+   ========================================================= */
+header::before,
+footer::before,
+.header-wrap::before,
+.header-wrap::after {
+  content: none !important;
+  background: none !important;
+}
+
+/* =========================================================
+   1) 래퍼
+   ========================================================= */
+.header-wrap {
   position: relative;
   z-index: 0;
-
-  /* 상단 헤더 배경 완전 제거 */
-  header::before,
-  footer::before,
-  .header-wrap::before,
-  .header-wrap::after {
-    content: none !important;
-    background: none !important;
 }
 
-}
-
-/* 상위 헤더 */
+/* =========================================================
+   2) 상위 헤더 (메인 네비)
+   ========================================================= */
 .main-header{
   box-sizing: border-box;
   position: relative;
@@ -28,10 +33,10 @@
   @include flex-center;
   justify-content: space-between;
 
-  /* 세로 줄임 */
+  /* 세로 여백 */
   padding: 10px 100px;
 
-  /* 흰 배경으로 고정 */
+  /* 흰 배경 고정 */
   background: $white;
   color: $black;
   font-family: $sans;
@@ -42,7 +47,7 @@
 
     .logo > *{
       max-width: 100%;
-      height: 130px; /* 필요하면 더 줄이기: 100~120px 권장 */
+      height: 130px; /* 필요 시 100~120px로 더 축소 가능 */
     }
 
     .logo_text{
@@ -68,7 +73,7 @@
       text-align: center;
       white-space: nowrap;
       transition: opacity $fast;
-      color: $black; /* 흰 배경에서 보이도록 */
+      color: $black; /* 흰 배경 대비 */
     }
 
     &:hover .nav_link{ opacity: .25; }
@@ -76,7 +81,7 @@
   }
 
   a{
-    color: $black !important; /* 흰 배경에 맞춰 검정 */
+    color: $black !important;
     font-family: $sans;
     text-decoration: none;
   }
@@ -95,24 +100,45 @@
   }
 }
 
-/* ① 예전 배경/오버레이 전면 비활성화: "최상위"에서 선언해야 먹습니다 */
-header::before,
-footer::before,
-.header-wrap::before,
-.header-wrap::after {
-  content: none !important;
-  background: none !important;
-}
-
-/* ② subheader를 오버레이 위로 올리기 + 배경 재확인 */
+/* =========================================================
+   3) 하위 헤더 (서브 헤더에만 배경 이미지)
+   ========================================================= */
 .subheader{
-  position: relative;      /* stacking context 생성 */
-  z-index: 2;              /* ::after(보통 z=1)보다 위 */
-  aspect-ratio: 1920 / 600;
-  padding: 0 100px;
+  position: relative;          /* 스태킹 컨텍스트 */
+  z-index: 2;
+  aspect-ratio: 1920 / 600;    /* header.png 실제 비율로 조정 */
+  padding: 0 100px;            /* 세로 패딩은 0 (내부에서 여백 주기) */
+  display: grid; 
+  place-items: center;
 
+  /* 배경: 그라디언트 오버레이 + 이미지 (한 줄로 고정) */
   background:
     linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)),
     url('/images/header.png') center / cover no-repeat !important;
-  display: grid; place-items: center;
+}
+
+/* 혹시 남아있을 오버레이를 확실히 제거 */
+.subheader::before { content: none !important; background: none !important; }
+
+/* 컨텐츠 래퍼(선택) */
+.subheader-inner{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 0;            /* 실제 내용 세로 여백은 여기서 */
+  color: $black;
+  @include inline-flex-center;
+  gap: 12px;
+
+  a{ color: $black; }
+}
+
+/* 반응형 패딩(선택) */
+@media (max-width: $tablet){
+  .subheader{ padding: 0 48px; }
+  .subheader-inner{ padding: 20px 0; }
+}
+@media (max-width: $phone){
+  .subheader{ padding: 0 24px; }
+  .subheader-inner{ padding: 16px 0; }
 }
